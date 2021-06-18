@@ -15,3 +15,10 @@ def get_soup(searchVal):
     #returns list of all <section> tags that have class attribute set to css-pnw38j e1hk9ate4
     return soup.find_all('section',class_=section)
     #Add stuff to do when no results come aka this won't exist
+
+#rename me
+def func(section):
+    #testing parsing sections
+    print(section.h3.span.text)
+
+func(get_soup('hi')[1])
