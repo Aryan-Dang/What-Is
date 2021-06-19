@@ -18,7 +18,13 @@ def get_soup(searchVal):
 
 #rename me
 def func(section):
-    #testing parsing sections
-    print(section.h3.span.text)
+    heading = section.h3.span.text
+    
+    #meanings exist in div elements
+    #find_all useful as some words have multiple meaning within the same heading
+    meanings = section.div.find_all('div')
+    for meaning in meanings:
+        print(meaning.prettify())
 
-func(get_soup('hi')[1])
+    
+func(get_soup('fuck')[1])
